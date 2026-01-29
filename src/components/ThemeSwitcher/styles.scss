@@ -1,0 +1,25 @@
+@use './../../colors.scss' as *;
+
+.theme-switcher-container {
+    display: flex;
+    padding: 0px 10px;
+    height: 100%;
+
+    .theme-switcher-button {
+        background-color: transparent;
+        opacity: .5;
+        cursor: pointer;
+        border: 0px;
+        color: var(--fontColor);
+        transition: all ease .15s;
+    }
+
+    &:hover {
+
+        .theme-switcher-button {
+            opacity: 1;
+            color: var(--primaryColor);
+        }
+    }
+
+}

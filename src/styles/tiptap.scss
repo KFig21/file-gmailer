@@ -1,0 +1,125 @@
+// src/styles/tiptap.scss
+
+.tiptap-editor-container {
+    background-color: var(--backgroundColor);
+    border: none;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    &.bulk {
+        border: solid 1px var(--borderColor);
+        border-radius: 8px;
+    }
+
+    &.disabled {
+        // opacity: 0.5;
+        pointer-events: none;
+        filter: grayscale(0.8);
+    }
+
+    .editor-toolbar {
+        display: flex;
+        align-items: center;
+        padding: 6px;
+        gap: 6px;
+        background: var(--backgroundColor);
+        border-bottom: solid 1px var(--borderColor);
+
+        button {
+            background: transparent;
+            border: none;
+            color: var(--fontColor);
+            padding: 4px 8px;
+            width: 24px;
+            height: 24px;
+            border-radius: 4px;
+            cursor: pointer;
+            outline: none;
+
+            &.is-active,
+            &:focus,
+            &:active {
+                background: var(--primaryColor);
+                color: var(--fontOverPrimaryColor)
+            }
+
+            &:hover {
+                background: var(--draftBgColor);
+            }
+        }
+
+        // .toolbar-divider {
+        //     width: 1px;
+        //     height: 20px;
+        //     background-color: var(--borderColor);
+        //     margin: 0 4px;
+        // }
+
+        .color-picker {
+            width: 24px;
+            height: 24px;
+            border: solid 1px var(--borderColor);
+            background: none;
+            cursor: pointer;
+            outline: none;
+            margin-right: 10px;
+
+            &::-webkit-color-swatch-wrapper {
+                padding: 0px !important;
+            }
+
+            &::-webkit-color-swatch {
+                border: 1px solid var(--borderColor);
+                transform: scale(2);
+            }
+
+            &:focus,
+            &:active {
+                border-color: var(--primaryColor);
+            }
+        }
+
+        .size-select {
+            background: var(--backgroundColor);
+            color: var(--fontColor);
+            border: 1px solid var(--borderColor);
+            font-size: 12px;
+            padding: 2px 4px;
+            outline: none;
+            height: 24px;
+
+            &:focus,
+            &:active {
+                border-color: var(--primaryColor);
+            }
+        }
+    }
+
+    .tiptap-content {
+        // This wrapper ensures the scrollbar stays inside the rounded borders
+        overflow-y: auto;
+        background-color: var(--backgroundColor);
+
+        .tiptap {
+            padding: 0.5rem 1rem;
+            outline: none;
+            color: var(--fontColor);
+            resize: none;
+            overflow: auto;
+            height: 300px;
+            min-height: 300px;
+            max-height: 300px;
+            overflow-y: auto;
+
+            p {
+                margin: 0;
+                font-size: inherit;
+            }
+
+            span {
+                line-height: 1.2;
+            }
+        }
+    }
+}

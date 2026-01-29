@@ -1,0 +1,45 @@
+:root,
+[data-theme='dark'] {
+    --borderColor: rgb(79, 104, 137);
+    --backgroundColor: rgb(30, 33, 43);
+    --headerBgColor: rgba(30, 33, 43, 0.7);
+    --draftBgColor: rgb(42, 48, 65);
+    --draftShadowColor: rgba(0, 0, 0, 0.4);
+
+    --fontColor: rgb(236, 236, 236);
+
+    --primaryColor: rgb(132, 159, 212);
+    --fontOverPrimaryColor: rgb(0, 0, 0);
+
+    --backgroundImageOpacity: .08;
+}
+
+[data-theme='light'] {
+    --borderColor: rgb(80, 80, 80);
+    --backgroundColor: rgb(245, 245, 245);
+    --headerBgColor: rgba(245, 245, 245, 0.7);
+    --draftBgColor: rgb(226, 226, 226);
+    --draftShadowColor: rgb(0, 0, 0);
+
+    --fontColor: rgb(0, 0, 0);
+
+    --primaryColor: rgb(70, 120, 220);
+    --fontOverPrimaryColor: rgb(244, 244, 244);
+
+    --backgroundImageOpacity: .15;
+}
+
+[data-theme='night'] {
+    --borderColor: rgb(110, 110, 110);
+    --backgroundColor: rgb(32, 32, 32);
+    --headerBgColor: rgba(41, 41, 41, 0.7);
+    --draftBgColor: rgb(65, 65, 65);
+    --draftShadowColor: rgba(0, 0, 0, 0.6);
+
+    --fontColor: rgb(236, 236, 236);
+
+    --primaryColor: rgb(70, 140, 220);
+    --fontOverPrimaryColor: rgb(0, 0, 0);
+
+    --backgroundImageOpacity: .08;
+}

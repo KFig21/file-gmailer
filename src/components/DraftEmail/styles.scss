@@ -1,0 +1,134 @@
+@use './../../colors.scss' as *;
+@use './../../index.scss' as *;
+
+.emails-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+
+    .email-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: calc(100vh - $headerHeight);
+        width: 100%;
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+
+        .email-container {
+            display: flex;
+            flex-direction: column;
+            background-color: var(--draftBgColor);
+            border: solid 1px var(--borderColor);
+            width: 80%;
+            max-width: 1000px;
+            max-height: 80%;
+            margin-top: 2%;
+            position: relative;
+            transition: all ease .5s;
+            overflow: hidden;
+            box-shadow: 10px 10px 0px 0px var(--draftShadowColor);
+
+            .draft-header {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: var(--primaryColor);
+                width: 100%;
+
+                .email-container-attachment {
+                    display: flex;
+                    flex: 2;
+                    flex-direction: row;
+                    align-items: center;
+                    gap: 6px;
+                    color: var(--fontOverPrimaryColor);
+                    padding: .75rem 1rem;
+
+                    .attachment-icon {
+                        transform: rotate(45deg);
+                    }
+                }
+
+                .delete-draft-container {
+                    opacity: .4;
+                    cursor: pointer;
+                    transition: all ease .15s;
+                    height: 24px;
+                    width: 24px;
+                    padding-right: 12px;
+                    color: var(--fontOverPrimaryColor);
+
+                    &:hover {
+                        opacity: 1;
+                    }
+                }
+            }
+
+            .draft-content {
+                display: flex;
+                flex-direction: column;
+
+                .draft-input-wrapper {
+                    display: grid;
+                    grid-template-columns: 100px auto;
+                    padding: 0;
+                    border-bottom: solid 1px var(--borderColor);
+                    background-color: var(--backgroundColor);
+
+                    .draft-input-name {
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-start;
+                        padding-left: 1rem;
+                        font-size: 0.9rem;
+                        background-color: var(--draftBgColor);
+                        border-right: solid 1px var(--borderColor);
+                    }
+
+                    input {
+                        background-color: var(--backgroundColor);
+                        color: var(--fontColor);
+                        padding: 0.5rem 1rem;
+                        border: none;
+
+                        &:focus,
+                        &:active {
+                            outline: none;
+                            background-color: var(--draftBgColor);
+                        }
+                    }
+                }
+
+                input[type='text'] {
+                    background-color: var(--backgroundColor);
+                    color: var(--fontColor);
+                    padding: 0.5rem 1rem;
+                    border: none;
+                    border-bottom: solid 1px var(--borderColor);
+
+                    &:focus,
+                    &:active {
+                        outline: none;
+                        background-color: var(--draftBgColor);
+                    }
+
+                }
+
+                .tiptap-editor-container {
+                    .tiptap-content {
+                        .tiptap {
+                            height: 80% !important;
+                            min-height: 400px !important;
+                            max-height: 600px;
+                            outline: none;
+                            padding: 1rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

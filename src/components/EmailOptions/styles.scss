@@ -1,0 +1,226 @@
+@use './../../colors.scss' as *;
+@use './../../index.scss' as *;
+
+.email-options-wrapper {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    background-color: var(--headerBgColor);
+    border-bottom: solid 1px var(--borderColor);
+    backdrop-filter: blur(3px);
+    position: sticky;
+    top: 0;
+    z-index: 3;
+    max-height: 90%;
+    // box-shadow: 10px 0px 10px 5px rgba(0, 0, 0, 0.12);
+
+    .email-options-container {
+        border-radius: 8px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        // align-items: center;
+        justify-content: center;
+        position: relative;
+
+        .email-options-header {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            width: 100%;
+            height: $headerHeight;
+            padding-left: 10px;
+
+            .email-options-title {
+                padding-left: 6px;
+                font-size: 1.25rem;
+                width: 100%;
+                font-weight: 600;
+            }
+        }
+
+        .email-options-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+
+            // THE SMOOTH MAGIC
+            overflow: hidden;
+            transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+                padding 0.3s ease,
+                opacity 0.3s ease;
+            max-height: 1200px;
+            opacity: 1;
+
+            &.closed {
+                max-height: 0px;
+                opacity: 0;
+                padding: 0px;
+                pointer-events: none; // Disable clicks while hidden
+            }
+
+            .option-row {
+                display: grid;
+                grid-template-columns: 24px 140px 700px;
+                gap: 0.5rem;
+                align-items: center;
+
+                &.option-body {
+                    flex-direction: column; // Stack editor below the label
+                    align-items: flex-start;
+                }
+
+                .checkbox-wrapper {
+                    display: flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                    cursor: pointer;
+                    user-select: none;
+                    height: 34px;
+
+                    input {
+                        position: absolute;
+                        opacity: 0;
+                        pointer-events: none;
+                    }
+
+                    .checkbox {
+                        width: 18px;
+                        height: 18px;
+                        // border-radius: 4px;
+                        border: 2px solid var(--borderColor);
+                        background-color: var(--backgroundColor);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        transition: all 0.15s ease;
+                    }
+
+                    .checkbox::after {
+                        content: '';
+                        width: 12px;
+                        height: 12px;
+                        background-color: var(--primaryColor);
+                        // border-radius: 2px;
+                        transform: scale(0);
+                        transition: transform 0.12s ease;
+                    }
+
+                    input:checked+.checkbox {
+                        border-color: var(--primaryColor);
+                    }
+
+                    input:checked+.checkbox::after {
+                        transform: scale(1);
+                    }
+
+                }
+
+                .checkbox-label {
+                    font-size: 1rem;
+                    height: 34px;
+                    display: flex;
+                    align-items: center;
+                    color: var(--fontColor);
+
+                    &.active {
+                        opacity: 1;
+                    }
+
+                    &.inactive {
+                        opacity: 0.5;
+                    }
+                }
+
+
+                input[type='text'],
+                input[type='email'] {
+                    background-color: var(--backgroundColor);
+                    color: var(--fontColor);
+                    padding: 0.5rem 1rem;
+                    border: solid 1px var(--borderColor);
+                    border-radius: 8px;
+
+                    &:active,
+                    &:focus {
+                        border: solid 1px var(--primaryColor);
+                        outline: solid 1px var(--primaryColor);
+                    }
+                }
+
+                .apply-button-container {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 100%;
+                    padding-bottom: 16px;
+
+                    .apply-button {
+                        background-color: var(--backgroundColor);
+                        color: var(--fontColor);
+                        border: solid 1px var(--borderColor);
+                        padding: 0.6rem 1.2rem;
+                        border-radius: 4px;
+                        cursor: pointer;
+                        font-size: .9rem;
+                        font-weight: 500;
+                        transition: all 0.15s ease;
+                        margin-top: 8px;
+                        width: auto;
+                        outline: none;
+
+                        &:hover,
+                        &:active,
+                        &:focus {
+                            background-color: var(--primaryColor);
+                            color: var(--fontOverPrimaryColor);
+                            border: solid 1px var(--primaryColor);
+                        }
+
+                        &.disabled {
+                            opacity: .5;
+                            cursor: not-allowed;
+
+                            &:hover,
+                            &:active,
+                            &:focus {
+                                background-color: var(--backgroundColor);
+                                color: var(--fontColor);
+                                border: solid 1px var(--borderColor);
+                            }
+                        }
+                    }
+                }
+
+            }
+
+            .delete-all-drafts-container {
+                position: absolute;
+                bottom: 16px;
+                right: 16px;
+
+                button {
+                    background-color: var(--draftBgColor);
+                    color: var(--fontColor);
+                    outline: none;
+                    border: solid 1px crimson;
+                    padding: 0.6rem 1.2rem;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    opacity: .5;
+
+                    &:hover,
+                    &:active,
+                    &:focus {
+                        background-color: crimson;
+                        color: white;
+                        border: solid 1px crimson;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,8 +1,7 @@
-export interface EmailFile {
-  id: string;
-  name: string;
+export interface FileEmailDraft {
+  file: File;
   path: string; // The file path on the computer
-  recipient: string;
+  to: string;
   cc: string;
   subject: string;
   body: string;

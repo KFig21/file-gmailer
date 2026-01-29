@@ -1,0 +1,22 @@
+@use './../../colors.scss' as *;
+
+// CREATE DRAFTS BUTTON
+.create-drafts-button {
+    background-color: var(--backgroundColor);
+    color: var(--fontColor);
+    border: solid 2px var(--borderColor);
+    padding: 1rem 2rem;
+    margin: 2rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: .91rem;
+    font-weight: 500;
+    transition: all 0.15s ease;
+
+    &:hover,
+    &:active {
+        background-color: var(--primaryColor);
+        color: var(--fontOverPrimaryColor);
+        border: solid 2px var(--primaryColor);
+    }
+}

@@ -1,0 +1,64 @@
+@use './../../colors.scss' as *;
+@use './../../index.scss' as *;
+
+// DROPZONE
+.dropzone-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - $headerHeight);
+    z-index: 2;
+
+    .dropzone {
+        background-color: var(--backgroundColor);
+        border: 2px dashed var(--primaryColor);
+        border-radius: 8px;
+        padding: 30px;
+        width: 500px;
+        max-width: 80vw;
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0px 0px 30px 10px rgba(0, 0, 0, 0.1);
+
+        .dropzone-text {
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
+
+        .dropzone-subtext {
+            font-size: 1rem;
+            opacity: .5;
+            font-style: italic;
+            padding: 0.75rem 0rem .9rem 0rem;
+        }
+
+        .dropzone-input-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+
+            .dropzone-button {
+                background-color: var(--backgroundColor);
+                color: var(--fontColor);
+                border: solid 1px var(--borderColor);
+                padding: 0.6rem 1.2rem;
+                border-radius: 4px;
+                cursor: pointer;
+                font-size: .91rem;
+                font-weight: 500;
+                transition: all 0.15s ease;
+
+                &:hover,
+                &:active {
+                    background-color: var(--primaryColor);
+                    color: var(--fontOverPrimaryColor);
+                    border: solid 1px var(--primaryColor);
+                }
+            }
+        }
+    }
+}

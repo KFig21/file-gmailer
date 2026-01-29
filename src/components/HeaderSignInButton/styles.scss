@@ -1,0 +1,41 @@
+@use './../../colors.scss' as *;
+@use './../../index.scss' as *;
+
+.sign-in-button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    border-right: solid 1px var(--borderColor);
+
+    button {
+        font-size: 1rem;
+        background-color: var(--primaryColor);
+        color: var(--fontOverPrimaryColor);
+        border: none;
+        cursor: pointer;
+        height: 100%;
+        transition: all ease .15s;
+        padding: 0px 2rem;
+        width: $sidebarWidth;
+
+        &:hover,
+        &:active {
+            background-color: var(--backgroundColor);
+            color: var(--primaryColor);
+            outline: none;
+        }
+
+        &.has-token {
+            background-color: var(--backgroundColor);
+            color: var(--primaryColor);
+
+            &:hover,
+            &:active {
+                background-color: var(--primaryColor);
+                color: var(--fontOverPrimaryColor);
+                outline: none;
+            }
+        }
+    }
+}
