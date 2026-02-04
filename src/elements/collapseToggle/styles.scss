@@ -12,8 +12,10 @@
     line-height: 1;
     cursor: pointer;
     transition: color 0.15s ease;
+    outline: none;
 
-    &:hover {
+    &:hover,
+    &:focus {
         color: var(--primaryColor);
     }
 }

@@ -12,14 +12,14 @@
         border: 0px;
         color: var(--fontColor);
         transition: all ease .15s;
+        outline: none;
     }
 
-    &:hover {
-
+    &:hover,
+    &:focus {
         .theme-switcher-button {
             opacity: 1;
             color: var(--primaryColor);
         }
     }
-
 }

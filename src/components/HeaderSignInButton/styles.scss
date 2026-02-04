@@ -18,8 +18,10 @@
         transition: all ease .15s;
         padding: 0px 2rem;
         width: $sidebarWidth;
+        outline: none;
 
         &:hover,
+        &:focus,
         &:active {
             background-color: var(--backgroundColor);
             color: var(--primaryColor);

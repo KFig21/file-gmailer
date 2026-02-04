@@ -30,10 +30,10 @@
 }
 
 [data-theme='night'] {
-    --borderColor: rgb(110, 110, 110);
-    --backgroundColor: rgb(32, 32, 32);
-    --headerBgColor: rgba(41, 41, 41, 0.7);
-    --draftBgColor: rgb(65, 65, 65);
+    --borderColor: rgb(79, 85, 95);
+    --backgroundColor: rgb(28, 29, 31);
+    --headerBgColor: rgba(33, 34, 36, 0.7);
+    --draftBgColor: rgb(49, 52, 59);
     --draftShadowColor: rgba(0, 0, 0, 0.6);
 
     --fontColor: rgb(236, 236, 236);
@@ -41,5 +41,5 @@
     --primaryColor: rgb(70, 140, 220);
     --fontOverPrimaryColor: rgb(0, 0, 0);
 
-    --backgroundImageOpacity: .08;
+    --backgroundImageOpacity: .1;
 }
