@@ -1,8 +1,7 @@
-// src/components/EmailOptions/EmailOptions.tsx
 import { useEffect, useState } from 'react';
 import { EditorContent } from '@tiptap/react';
 import { useTiptapConfig } from '../../hooks/useTiptapConfig';
-import { MenuBar } from '../Shared/MenuBar';
+import { MenuBar } from '../Shared/menuBar/MenuBar';
 import CollapseToggle from '../../elements/collapseToggle/CollapseToggle';
 import './styles.scss';
 
@@ -80,8 +79,8 @@ export default function EmailOptions({ onApply, onClearAll }: Props) {
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      // Example: Trigger on Meta (Cmd) + B or Ctrl + B
-      if ((e.metaKey || e.ctrlKey) && e.key === 'b') {
+      // Example: Trigger on Meta (Cmd) + J or Ctrl + J
+      if ((e.metaKey || e.ctrlKey) && e.key === 'j') {
         // Prevent the browser's default "Bold" action if necessary
         // e.preventDefault();
         setOpen((prev) => !prev);

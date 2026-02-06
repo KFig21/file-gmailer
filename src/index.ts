@@ -27,7 +27,7 @@ const createWindow = (): void => {
     width: 1200, 
     height: 800,
     show: false, // Don't show immediately to avoid flickering
-    icon: path.join(__dirname, './assets/icon.png'),
+    icon: path.join(app.getAppPath(), 'src', 'assets', 'icons', 'icon.png'),
     webPreferences: {
       preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY,
       contextIsolation: true,

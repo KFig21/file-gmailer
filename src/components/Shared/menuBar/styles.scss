@@ -1,0 +1,133 @@
+@use './../../../colors.scss' as *;
+
+.editor-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px;
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--borderColor);
+    background-color: var(--backgroundColor);
+
+    // Groups of buttons
+    .button-group {
+        display: flex;
+        gap: 6px;
+    }
+
+    .inputs-group {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-left: 4px;
+    }
+
+    // Vertical Divider
+    .divider {
+        width: 1px;
+        height: 20px;
+        background-color: var(--borderColor);
+        margin: 0 6px;
+    }
+
+    // Common Button Styles
+    .toolbar-btn {
+        background: transparent;
+        border: none;
+        border-radius: 4px;
+        color: var(--fontColor);
+        cursor: pointer;
+        padding: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.2s;
+        opacity: 0.7;
+
+        &:hover {
+            background-color: var(--draftBgColor); // or a lighter shade
+            opacity: 1;
+        }
+
+        &:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+
+        &.is-active {
+            background-color: var(--primaryColor);
+            color: var(--fontOverPrimaryColor);
+            opacity: 1;
+        }
+    }
+
+    // Color Picker Styling
+    .color-wrapper {
+        display: flex;
+        align-items: center;
+
+        .color-picker {
+            width: 24px;
+            height: 24px;
+            padding: 0;
+            border: none;
+            background: none;
+            cursor: pointer;
+
+            &::-webkit-color-swatch-wrapper {
+                padding: 0;
+            }
+
+            &::-webkit-color-swatch {
+                border: 1px solid var(--borderColor);
+                border-radius: 4px;
+            }
+        }
+    }
+
+    // Select Dropdown
+    .size-select {
+        background-color: var(--backgroundColor);
+        color: var(--fontColor);
+        border: 1px solid var(--borderColor);
+        border-radius: 4px;
+        padding: 2px 4px;
+        font-size: 0.85rem;
+        cursor: pointer;
+        outline: none;
+
+        &:focus {
+            border-color: var(--primaryColor);
+        }
+    }
+
+    .link-input-container {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        background: var(--draftBgColor);
+        padding: 2px 6px;
+        border-radius: 4px;
+        border: 1px solid var(--primaryColor);
+
+        .link-input {
+            background: transparent;
+            border: none;
+            color: var(--fontColor);
+            outline: none;
+            font-size: 0.8rem;
+            width: 150px;
+            border: none !important;
+        }
+
+        .toolbar-btn.success {
+            color: #4caf50;
+            opacity: 1;
+        }
+
+        .toolbar-btn.danger {
+            color: crimson;
+            opacity: 1;
+        }
+    }
+}

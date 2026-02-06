@@ -189,6 +189,7 @@ const App = () => {
             createAllDrafts={createAllDrafts}
             onFilesAdded={addFiles}
             loading={loading}
+            numDrafts={drafts.length}
           />
         )}
 

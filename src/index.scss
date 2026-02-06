@@ -152,3 +152,50 @@ body {
     // border-radius: 20px;
     background-clip: content-box;
 }
+
+/* Global Tiptap Content Styles */
+.tiptap {
+    /* Basic Focus outline removal (already in your code, but reinforcing) */
+    outline: none !important;
+
+    /* Lists */
+    ul,
+    ol {
+        padding: 0 1rem;
+        margin: 0.5rem 0;
+    }
+
+    /* Links */
+    a {
+        color: var(--primaryColor);
+        cursor: pointer;
+        text-decoration: underline;
+    }
+
+    /* Blockquotes */
+    blockquote {
+        border-left: 3px solid var(--borderColor);
+        margin: 1rem 0;
+        padding-left: 1rem;
+        font-style: italic;
+        opacity: 0.8;
+    }
+
+    /* Placeholder text styling */
+    p.is-editor-empty:first-child::before {
+        color: var(--fontColor);
+        content: attr(data-placeholder);
+        float: left;
+        height: 0;
+        pointer-events: none;
+        opacity: 0.4;
+    }
+
+    /* Highlight styling */
+    mark {
+        background-color: #ffe066;
+        padding: 0.125em 0;
+        border-radius: 0.25em;
+        box-decoration-break: clone;
+    }
+}

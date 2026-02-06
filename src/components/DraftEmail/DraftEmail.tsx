@@ -3,7 +3,7 @@ import AttachFileIcon from '@mui/icons-material/AttachFile';
 import './styles.scss';
 import { useEffect } from 'react';
 import { EditorContent } from '@tiptap/react';
-import { MenuBar } from '../Shared/MenuBar';
+import { MenuBar } from '../Shared/menuBar/MenuBar';
 import { useTiptapConfig } from '../../hooks/useTiptapConfig';
 import DeleteIcon from '@mui/icons-material/Delete';
 

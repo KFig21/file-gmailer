@@ -10,10 +10,12 @@ import { FuseV1Options, FuseVersion } from '@electron/fuses';
 
 import { mainConfig } from './webpack.main.config';
 import { rendererConfig } from './webpack.renderer.config';
+import path from 'path';
 
 const config: ForgeConfig = {
   packagerConfig: {
     asar: true,
+    icon: path.join(__dirname, 'src/assets/icons/icon')
   },
   rebuildConfig: {},
   makers: [

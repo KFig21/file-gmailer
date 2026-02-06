@@ -8,6 +8,7 @@ type Props = {
   createAllDrafts: () => void;
   onFilesAdded: (files: File[]) => void;
   loading: boolean;
+  numDrafts?: number;
 };
 
 export default function DraftNavigator({
@@ -18,6 +19,7 @@ export default function DraftNavigator({
   createAllDrafts,
   onFilesAdded,
   loading,
+  numDrafts
 }: Props) {
 
   const handleCreateDrafts = () => {
@@ -62,7 +64,17 @@ export default function DraftNavigator({
           className={`sidebar-create-drafts-button ${loading ? 'disabled' : ''}`}
           onClick={handleCreateDrafts}
         >
-          {loading ? <span className="spinner" /> : 'Create drafts'}
+                    {loading ? (
+            <span className="spinner" />
+          ) : numDrafts ? (
+            numDrafts > 1 ? (
+              'Create drafts'
+            ) : (
+              'Create draft'
+            )
+          ) : (
+            'Create draft'
+          )}
         </div>
       </div>
     </div>
